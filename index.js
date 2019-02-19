@@ -172,7 +172,7 @@ server.get('/api/bears', async (req, res) => {
     }
   });
 
-  //DELETE /api/zoos/:id
+  //DELETE /api/bears/:id
   server.delete('/api/bears/:id', async (req, res) => {
     try {
       const count = await db('bears')
@@ -191,7 +191,7 @@ server.get('/api/bears', async (req, res) => {
     }
   });
 
-  //PUT /api/zoos/:id
+  //PUT /api/bears/:id
 
   server.put('/api/bears/:id', async (req, res) => {
     try {
@@ -200,7 +200,7 @@ server.get('/api/bears', async (req, res) => {
         .update(req.body);
   
       if (count > 0) {
-        const bear = await db('bearss')
+        const bear = await db('bears')
           .where({ id: req.params.id })
           .first();
   
